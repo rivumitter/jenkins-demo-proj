@@ -13,7 +13,7 @@ pipeline {
 	    stage('test') {
             when {
                 expression {
-                   params.EXECUTE_TESTS == true && env.BRANCH_NAME == 'dev'
+                  env.BRANCH_NAME == 'dev'
                 }
             }
             steps {
