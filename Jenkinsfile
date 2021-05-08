@@ -2,6 +2,7 @@ pipeline {
     agent any
 	parameters {
 		string(name: 'VERSION', defaultValue: '79', description: '')
+		booleanParam(name:'EXECUTE_TESTS', defaultValue: true, description: '')
 	}
     stages {
         stage('build') {
@@ -12,7 +13,7 @@ pipeline {
 	    stage('test') {
             when {
                 expression {
-                   params.VERSION == '79'
+                   params.EXECUTE_TESTS == true
                 }
             }
             steps {
