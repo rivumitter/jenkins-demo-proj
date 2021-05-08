@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+	parameters {
+		string(name: 'VERSION', defaultValue: '79', description: '')
+	}
     stages {
         stage('build') {
             steps {
@@ -10,7 +12,7 @@ pipeline {
 	    stage('test') {
             when {
                 expression {
-                    env.BRANCH_NAME == 'dev'
+                   params.VERSION == '79'
                 }
             }
             steps {
