@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'Hello Build'
+                echo 'Hello Build, Pulling brachName=' + env.BRANCH_NAME
             }
         }
 	    stage('test') {
