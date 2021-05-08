@@ -7,7 +7,12 @@ pipeline {
                 echo 'Hello Build'
             }
         }
-	stage('test') {
+	    stage('test') {
+            when {
+                expression {
+                    BRANCH_NAME == 'main'
+                }
+            }
             steps {
                 echo 'Hello Test'
             }
