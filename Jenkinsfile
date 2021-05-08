@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('build') {
             steps {
-		git 'https://github.com/rivumitter/jenkins-demo-proj.git'
                 echo 'Hello Build'
             }
         }
